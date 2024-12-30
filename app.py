@@ -4,9 +4,11 @@ from bson.objectid import ObjectId
 from datetime import datetime
 from werkzeug.utils import secure_filename
 import os
+from dotenv import load_dotenv
 
+mongo_connection_string = os.getenv("MONGO_URI", "mongodb://127.0.0.1:27017")
 # MongoDB Setup
-cluster = MongoClient("127.0.0.1:27017")
+cluster = MongoClient(mongo_connection_string)
 db = cluster['sports-Arena']
 owners = db['owners']
 users = db['users']
