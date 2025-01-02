@@ -6,10 +6,10 @@ from werkzeug.utils import secure_filename
 import os
 from dotenv import load_dotenv
 
-mongo_connection_string = os.getenv("MONGO_URI", "mongodb://127.0.0.1:27017")
+mongo_connection_string = os.getenv("MONGO_URI", "mongodb://127.0.0.1:17017")
 # MongoDB Setup
 cluster = MongoClient(mongo_connection_string)
-db = cluster['sports-Arena']
+db = cluster['kits-assets']
 owners = db['owners']
 users = db['users']
 grounds=db['grounds']
