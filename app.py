@@ -411,7 +411,7 @@ def check_full_day_availability(ground_id):
         "10:00 PM"
     ]
 
-    # Find bookings for the given ground and date
+    # Query bookings for the given date
     booked_slots = bookings.find({
         "ground_id": ObjectId(ground_id),
         "$or": [
@@ -421,25 +421,27 @@ def check_full_day_availability(ground_id):
         "status": {"$in": ["booked", "pending"]}
     })
 
-    # Check if any slots are already booked
+    # Check if any slots are already booked or pending
     booked_time_slots = set()
     for booking in booked_slots:
         if booking.get("booking_type") == "full_day":
+            # Full-day booking already exists
             return jsonify({
                 "is_available": False,
                 "booked_slots": all_time_slots
             })
-        
         if "time_slots" in booking:
             booked_time_slots.update(booking["time_slots"])
+        elif "time_slot" in booking:
+            booked_time_slots.add(booking["time_slot"])
 
+    # Determine availability for full-day booking
     is_available = len(booked_time_slots) == 0
 
     return jsonify({
         "is_available": is_available,
         "booked_slots": list(booked_time_slots)
     })
-
 
 @app.route("/book-full-day", methods=['POST'])
 def book_full_day():
