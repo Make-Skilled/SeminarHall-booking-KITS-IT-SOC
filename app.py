@@ -400,7 +400,9 @@ def book_slot():
 @app.route("/ground/<ground_id>/check-full-day-availability", methods=['GET'])
 def check_full_day_availability(ground_id):
     date = request.args.get('date')
-    
+    if not date:
+        return jsonify({"success": False, "message": "Date is required."}), 400
+
     # All possible time slots for the day
     all_time_slots = [
         "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM",
@@ -409,39 +411,35 @@ def check_full_day_availability(ground_id):
         "10:00 PM"
     ]
 
-    # Check for any booked or pending slots
+    # Find bookings for the given ground and date
     booked_slots = bookings.find({
         "ground_id": ObjectId(ground_id),
-        "booking_date": date,
         "$or": [
-            {"status": "booked"},
-            {"status": "pending"}
-        ]
+            {"booking_date": date},  # Direct bookings for the date
+            {"booking_dates": date},  # Date within a range booking
+        ],
+        "status": {"$in": ["booked", "pending"]}
     })
 
     # Check if any slots are already booked
     booked_time_slots = set()
     for booking in booked_slots:
-        # If it's a full-day booking, all slots are considered booked
         if booking.get("booking_type") == "full_day":
             return jsonify({
                 "is_available": False,
                 "booked_slots": all_time_slots
             })
         
-        # For individual slot bookings
         if "time_slots" in booking:
             booked_time_slots.update(booking["time_slots"])
-        else:
-            booked_time_slots.add(booking["time_slot"])
 
-    # Check if all slots are available
     is_available = len(booked_time_slots) == 0
 
     return jsonify({
         "is_available": is_available,
         "booked_slots": list(booked_time_slots)
     })
+
 
 @app.route("/book-full-day", methods=['POST'])
 def book_full_day():
@@ -497,9 +495,9 @@ def check_date_range_availability(ground_id):
     start_date = request.args.get('start_date')
     end_date = request.args.get('end_date')
 
-    # Validate date inputs
     if not start_date or not end_date:
         return jsonify({"success": False, "message": "Start and end dates are required."}), 400
+
     try:
         start_dt = datetime.strptime(start_date, '%Y-%m-%d')
         end_dt = datetime.strptime(end_date, '%Y-%m-%d')
@@ -520,7 +518,10 @@ def check_date_range_availability(ground_id):
     for date in date_range:
         count = bookings.count_documents({
             "ground_id": ObjectId(ground_id),
-            "booking_date": date,
+            "$or": [
+                {"booking_date": date},
+                {"booking_dates": date}
+            ],
             "status": {"$in": ["booked", "pending"]}
         })
         if count > 0:
