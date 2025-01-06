@@ -1,512 +1,210 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KKR and KSR Institute of Technology and Sciences</title>
-    <link rel="icon" type="image/x-icon" href="https://d13loartjoc1yn.cloudfront.net/upload/institute/logo/medium/130326100953_kits.jpg">
+    <link rel="icon" type="image/x-icon"
+        href="https://d13loartjoc1yn.cloudfront.net/upload/institute/logo/medium/130326100953_kits.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-      *{
-        font-family: 'Poppins', sans-serif;
-      }
-      /* General Styles */
-      body {
-        background-color: #f8f9fa;
-        color: #212529;
-      }
-      a.nav-link {
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      a.nav-link:hover {
-        color: #ffcc00;
-      }
-
-      /* Header */
-      header {
-        background-color: #001f4d;
-      }
-
-      /* Marquee */
-      .marquee {
-        width: 100%;
-        margin: 10px auto;
-        background-color: #ffcc00;
-        color: #212529;
-        overflow: hidden;
-        white-space: nowrap;
-        border-radius: 5px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      .marquee span {
-        display: inline-block;
-        padding-left: 100%;
-        animation: marquee 10s linear infinite;
-        font-family: 'Poppins', sans-serif;
-      }
-      @keyframes marquee {
-        from {
-          transform: translateX(0);
+        * {
+            font-family: 'Poppins', sans-serif;
         }
-        to {
-          transform: translateX(-100%);
+
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
         }
-      }
 
-      /* Hero Section */
-      .image-container {
-        position: relative;
-        width: 100%;
-        height: 650px;
-        overflow: hidden;
-      }
-      .image-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .overlay-content {
-        position: absolute;
-        top: 60%;
-        left: 5%;
-        transform: translateY(-50%);
-        color: white;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        max-width: 40%;
-        background-color: rgba(0, 31, 77, 0.7);
-        padding: 20px;
-        border-radius: 10px;
-      }
-      .overlay-content h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-      .overlay-content p {
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-      }
-      .overlay-content .btn {
-        background-color: #ffcc00;
-        color: #001f4d;
-        border: none;
-        border-radius: 5px;
-        margin-left: 40%;
-      }
-      .overlay-content .btn:hover {
-        background-color: #e6b800;
-        color: #fff;
-      }
+        a.nav-link {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
-      /* Founders Section */
-      .container #custom-cards {
-        margin-top: 50px;
-      }
-      .container #custom-cards h2 {
-        color: #001f4d;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 30px;
-      }
-     
-      
-     
+        a.nav-link:hover {
+            color: #ffcc00;
+        }
 
-      /* Footer Section */
-      .footer-contact-desc {
-        display: flex;
-        justify-content: space-evenly;
-        background-color: black;
-        color: white;
-        padding: 50px 20px;
-        border-radius: 10px;
-      
-      }
-      .footer-contact-desc .contact-inner {
-        text-align: center;
-        width: 100%;
-      }
-      .footer-contact-desc .contact-inner i {
-        font-size: 2rem;
-        margin-bottom: 10px;
-        color: #ffcc00;
-      }
-      .footer-contact-desc .contact-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      .footer-contact-desc .contact-desc {
-        font-size: 1rem;
-      }
-      .footer-divider {
-        border-left: 2px solid #ffcc00;
-        height: auto;
-        margin: 0 20px;
-      }
+        header {
+            background-color: #001f4d;
+        }
 
-       /* Review Container Styling */
-       .review-container {
-      width: 40%; /* Adjust the width as needed */
-      padding: 20px;
-    }
+        .marquee {
+            width: 100%;
+            background-color: #ffcc00;
+            color: #212529;
+            overflow: hidden;
+            white-space: nowrap;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    .review-container h2 {
-      margin-bottom: 10px;
-    }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 10s linear infinite;
+        }
 
-    .review-container form label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
 
-    .review-container input,
-    .review-container textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+            to {
+                transform: translateX(-100%);
+            }
+        }
 
-    .review-container textarea {
-      height: 100px;
-      resize: none;
-    }
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+        }
 
-    .review-container button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .review-container button:hover {
-      background-color: #0056b3;
-    }
+        .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            max-width: 90%;
+            background-color: rgba(0, 31, 77, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-    /* About Us Section Styling */
-    .about-us {
-      width: 55%; /* Adjust width as needed */
-      padding: 20px;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+        @media (min-width: 768px) {
+            .overlay-content {
+                max-width: 40%;
+            }
+        }
 
-    .about-us h1,
-    .about-us h6 {
-      margin: 0;
-      margin-bottom: 10px;
-    }
+        .overlay-content h1 {
+            font-size: 1.8rem;
+        }
 
-    .about-us p {
-      line-height: 1.5;
-      font-size: 14px;
-    }
+        @media (min-width: 768px) {
+            .overlay-content h1 {
+                font-size: 2.5rem;
+            }
+        }
 
-     .card {
-      
-        border: none;
-        width: 250px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.744);
-      } 
+        .overlay-content .btn {
+            background-color: #ffcc00;
+            color: #001f4d;
+            border: none;
+            border-radius: 5px;
+            margin-left: auto;
+        }
 
-      /* General container styling */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-/* Card styling */
-.card5 {
-  text-align: center; /* Center the content including the icon */
-  background: linear-gradient(145deg, #1e1e2f, #31315a); /* Gradient for card background */
-}
+        .container .row {
+            row-gap: 20px;
+        }
 
+        @media (max-width: 576px) {
+            .container .row .col {
+                margin-bottom: 20px;
+            }
+        }
 
-.card5 h3 {
-  margin: 0;
-  font-size: 1.8rem; /* Adjust text size */
-  color: #ffffff; /* Ensure text is readable */
-  
-}
+        .footer-contact-desc {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-
-.card5 i {
-  font-size: 6rem; /* Adjust the size of the icon */
-  /* margin-bottom: 2px; Add spacing between icon and text */
-  color: #ffc107; /* Set a bright color for the icon */
-  transition: transform 0.3s, color 0.3s; /* Add hover animations */
-}
-
-/* Hover effect for icons */
-.card5:hover i {
-  transform: scale(1.2); /* Enlarge the icon slightly on hover */
-  color: #ff5722; /* Change color on hover */
-}
-/* Remove underline from links inside the card */
-.card5 a {
-  text-decoration: none;
-}
-.card5 {
-  animation: cardBounce 2s ease-in-out infinite;
-}
-
-.card5:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.card5 {
-  opacity: 0; /* Make the cards invisible initially */
-  animation: none; /* Prevent animation from running automatically */
-}
-
-.card5.animate {
-  animation: slideInFromLeft 1s ease-out forwards; /* Apply animation when class is added */
-}
-
-
-
-h2{
-  font-family:Arial, Helvetica, sans-serif;
-}
-
+        .footer-contact-desc .contact-inner {
+            flex: 1 1 30%;
+            text-align: center;
+        }
     </style>
-  </head>
-  <body>
-    <!-- Header -->
+</head>
+
+<body>
     <header class="p-3 text-white">
-      <!-- <div class="container" style="margin: 0px; padding: 0px !important;"> -->
-        <div class="d-flex justify-content-between align-items-center">
-          <!-- Logo on the left -->
-          <img src="https://tse2.mm.bing.net/th?id=OIP.-kQDEZjqxxe0uoBS1geZ8AHaHa&pid=Api&P=0&h=180" alt="kitslogo" style="height: 80px; width: 80px;">
-    
-          <!-- Navigation links on the right -->
-          <ul class="nav mb-2 mb-md-0 ms-auto" style="display: flex;">
-            <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
-            <li><a href="#contact" class="nav-link px-2 text-white">Contact</a></li>
-            <li><a href="#about-us" class="nav-link px-2 text-white">About</a></li>
-          </ul>
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.-kQDEZjqxxe0uoBS1geZ8AHaHa&pid=Api&P=0&h=180" alt="kitslogo"
+                    style="height: 80px; width: 80px;">
+                <ul class="nav mb-2 mb-md-0 ms-auto" style="display: flex;">
+                    <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+                    <li><a href="#contact" class="nav-link px-2 text-white">Contact</a></li>
+                    <li><a href="#about-us" class="nav-link px-2 text-white">About</a></li>
+                </ul>
+            </div>
         </div>
-      <!-- </div> -->
     </header>
-    
-    
-    
 
-    <!-- Marquee -->
     <div class="marquee">
-      <span> Booking for seminar halls is now opened.</span>
+        <span> Booking for seminar halls is now opened.</span>
     </div>
 
-    <!-- Hero Section -->
     <div class="image-container">
-      <img src="https://www.kitsguntur.ac.in/imagesnew/slider/home4/slide1.jpg" alt="KITS">
-      <div class="overlay-content">
-        <h1 style="margin-left: 100px; font-weight: bold;">Welcome to KITS</h1>
-        <p>KKR & KSR INSTITUTE OF TECHNOLOGY AND SCIENCES, popularly known as KITS, was established in 2008 by GSR & KKR EDUCATIONAL SOCIETY in Vinjanampadu village, Vatticherukuru Mandal of Guntur district by Sri. Koye Subba Rao, Chairman.</p>
-       <!-- <div style="display: flex; justify-content: space-evenly; ">
-        <button type="button" class="btn btn-lg" >User</button>
-        <button type="button" class="btn btn-lg" style="margin-left: 60px;">Admin</button>
-    </div> -->
-      </div>
+        <img src="https://www.kitsguntur.ac.in/imagesnew/slider/home4/slide1.jpg" alt="KITS">
+        <div class="overlay-content">
+            <h1>Welcome to KITS</h1>
+            <p>KKR & KSR INSTITUTE OF TECHNOLOGY AND SCIENCES, popularly known as KITS...</p>
+        </div>
     </div>
 
-    <!-- logins -->
-    <div class="container px-4 py-5" id="custom-cards">
-      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" style="margin-left: 220px; ">
-        <div class="col">
-          <div class="card5 card5-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg">
-            <a href="/user/register"><div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-              <i class="fa-solid fa-user"></i>
-              <h3 class="pt-5 mt-2 mb-2 display-6 lh-1 fw-bold text-decoration-none">User Login</h3>
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 text-center">
+            <div class="col">
+                <div class="card5">
+                    <a href="/user/register" class="text-decoration-none">
+                        <i class="fa-solid fa-user"></i>
+                        <h3>User Login</h3>
+                    </a>
+                </div>
             </div>
-          </div>
-        </div></a>
-  
-        <div class="col" style="margin-left: 100px;">
-          <div class="card5 card5-cover h-10 overflow-hidden text-bg-dark rounded-4 shadow-lg">
-           <a href="/owner/register"> <div class="d-flex flex-column h-10 p-5 pb-3 text-white text-shadow-1">
-              <i class="fa-solid fa-user-shield"></i>
-              <h3 class="pt-5 mt-2 mb-2 display-6 lh-1 fw-bold text-decoration-none">Admin Login</h3>
+            <div class="col">
+                <div class="card5">
+                    <a href="/owner/register" class="text-decoration-none">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h3>Admin Login</h3>
+                    </a>
+                </div>
             </div>
-          </div>
-        </div></a>
-      </div>
-   </div>
-
-
-    <!-- Founders Section -->
-    <div class="container px-4 py-5" id="custom-cards">
-      <h2 style=" margin-bottom: 4%; margin-left: 525px; font-weight: bold;">Founders</h2><hr>
-      <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4">
-        <div class="col">
-          <div class="card" style="margin-left: 50%;">
-            <img src="https://www.kitsguntur.ac.in/admin/up_files/chairman.jpg" alt="Chairman" class="card-img-top">
-            <h3 class="text-center">K. Subba Rao</h3>
-          </div>
         </div>
-        <div class="col">
-          <div class="card"style="margin-left: 10%;">
-            <img src="https://www.kitsguntur.ac.in/admin/up_files/secretary.jpg" alt="Secretary" class="card-img-top">
-            <h3 class="text-center">K. Sekhar</h3>
-          </div>
-        </div>
-      </div>
     </div>
 
-
-    <!-- About us section -->
-    <div class="container mt-5 class="about-us" id="about-us" style="display: flex; justify-content: space-between;">
-        <div class="row" >
-         
-          <div class="col-md-6">
-            <div class="about-us" style="width: 100%; height: 425px;">
-              <h1 style="color: #66b366; font-weight: bold;">About Us</h1><hr>
-              <h6>Welcome to KITS</h6>
-              <p>
-                KITS (KKR & KSR Institute of Technology & Sciences) is affiliated to JNTU Kakinada and approved by AICTE New Delhi. <br>
-                KITS campus is located in a serene and pollution-free atmosphere at Vinjanampadu, 5Km from Guntur on Pratipadu Road. <br>
-                The campus spread over 11 acres of scenic landscape is an ideal place for educational pursuits. <br><br>
-                
-                <strong>Vision:</strong> To produce eminent and ethical Engineers and Managers for society by imparting quality professional education with emphasis on human values and holistic excellence. <br><br>
-                <strong>Mission:</strong> To incorporate benchmarked teaching and learning pedagogies in curriculum. To ensure all-round development of students through judicious blend of curricular, co-curricular, and extra-curricular activities.
-              </p>
+    <footer class="container py-4">
+        <div class="footer-contact-desc">
+            <div class="contact-inner">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Address</h4>
+                <p>Vinjanampadu, Guntur...</p>
             </div>
-          </div>
-          
-          <div class="col-md-6">
-            <div class="review-container" style="width: 100%;"> 
-           
-            <img src="https://www.kitsguntur.ac.in/imagesnew/about/about2.jpg" alt="" style="height: 400px;">
-           
+            <div class="contact-inner">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Phone</h4>
+                <p>0863 - 2333399</p>
             </div>
-          </div> 
+            <div class="contact-inner">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <p>principal@kitsguntur.ac.in</p>
+            </div>
         </div>
-      </div>
-
-     <!-- college address details section -->
-      <div class="container py-5 class="contact" id="contact"" style="width: 200%; margin-top: 50px;">
-        <div class="row text-white bg-black rounded p-4">
-          <div class="col-md-4 text-center">
-            <i class="fas fa-map-marker-alt fa-2x mb-2" style="color: #ffcc00;"></i>
-            <h4 class="contact-title">Address</h4>
-            <p class="contact-desc">
-              Vinjanampadu, Vatticherukuru Mandal,<br>
-              Guntur, Andhra Pradesh 522017
-            </p>
-          </div>
-          <div class="col-md-4 text-center">
-            <i class="fas fa-phone-alt fa-2x mb-2" style="color: #ffcc00;"></i>
-            <h4 class="contact-title">Phone Number</h4>
-            <p class="contact-desc">
-              0863 - 2333399 <br>
-              0863 - 2286677<br>
-              0863 - 2286666
-            </p>
-          </div>
-          <div class="col-md-4 text-center">
-            <i class="fas fa-envelope fa-2x mb-2" style="color: #ffcc00;"></i>
-            <h4 class="contact-title">Email Address</h4>
-            <p class="contact-desc">
-              Principal: principal@kitsguntur.ac.in,<br>
-              Chairman: chairman@kitsguntur.ac.in,<br>
-              Secretary: secretary@kitsguntur.ac.in
-            </p>
-          </div>
-        </div>
-          </div>
-
-         <!-- Send Us a Message Section -->
-         <div class="container mt-5">
-          <div class="row justify-content-center">
-              <div class="col-md-8">
-                  <div class="card shadow-sm border-0 p-4" style="width: 80%; margin-left: 10%;">
-                      <h2 class="text-center mb-4" style="color: #2534d8; font-weight: bold;">Send Us a Message</h2>
-                      <form>
-                          <!-- Username -->
-                          <div class="mb-3 input-group">
-                              <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                              <input type="text" class="form-control" id="username" placeholder="Enter your name" required>
-                          </div>
-      
-                          <!-- Branch -->
-                          <div class="mb-3 input-group">
-                              <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
-                              <input type="text" class="form-control" id="branch" placeholder="Enter your branch" required>
-                          </div>
-      
-                          <!-- Email -->
-                          <div class="mb-3 input-group">
-                              <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
-                              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                          </div>
-      
-                          <!-- Message -->
-                          <div class="mb-3 input-group">
-                              <span class="input-group-text"><i class="fa-solid fa-comments"></i></span>
-                              <textarea class="form-control" id="review" placeholder="Write your message here" rows="4" required></textarea>
-                          </div>
-      
-                          <!-- Submit Button -->
-                          <div class="d-grid">
-                              <button id="submitbutton" type="submit" class="btn btn-primary btn-lg">Submit</button>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-     <!-- footer -->
-     <div class="container" style="margin-top: 30px;">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-              <div class="col-md-4 d-flex align-items-center">
-                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                  <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-                </a>
-                <span class="mb-3 mb-md-0 text-body-secondary" >© 2021 All Rights Reserved KITS. All Rights Reserved.</span>
-            </div>
-            </footer>
-          </div>
-
-          <script>
-            document.addEventListener("DOMContentLoaded", () => {
-              const cards = document.querySelectorAll(".card5");
-              
-              const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                  if (entry.isIntersecting) {
-                    // Add the animate class when the element is in view
-                    entry.target.classList.add("animate");
-                  } else {
-                    // Remove the animate class when the element is out of view
-                    entry.target.classList.remove("animate");
-                  }
-                });
-              });
-          
-              cards.forEach(card => observer.observe(card));
-            });
-          </script>
-          
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+</body>
+
 </html>
